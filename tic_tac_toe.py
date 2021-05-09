@@ -73,7 +73,7 @@ def play(values,player1,player2) :
             new_print("equality") 
             break                                                                                                                                                                                                                                                                                       #win_pos = [[1,2,3],[1,4,7],[7,8,9],[3,6,9],[1,5,9],[3,5,7]]
 while 1: 
-    if str(get_msg()) == "play":
+    if get_msg() == "play":
         print("1")
         text = "le joueur1 enter votre nom "
         new_print(text)
