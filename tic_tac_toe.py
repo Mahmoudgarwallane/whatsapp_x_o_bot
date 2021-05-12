@@ -28,15 +28,18 @@ def new_print(Text):
     pt.typewrite(Text)
     pt.press("enter")
 def get_msg():
-    print("we have got the message ")
+    print("we've got the message ")
     check_green_mark()
     pt.moveTo(712,906)
+    sleep(1)
     pt.tripleClick()
-    pt.click(button='right')
-    pt.moveTo(754,928)
-    pt.click(754,928)
-    
-    return pyperclip.paste()
+    pt.keyDown('ctrl')
+    pt.press('c')
+    pt.keyUp('ctrl')
+    print("text > ")
+    text = pyperclip.paste()
+    print(text)
+    return text
     
     
 
@@ -58,9 +61,9 @@ def play(values,player1,player2) :
     display(values)
     for i in range(1,20):
         who_is_playing = player2 if i%2 == 0 else player1
-        new_print(f"{who_is_playing} entrer  a number  ")
+        new_print(f"{who_is_playing} type  a number  ")
         out()
-        inp = int(get_msg())
+        inp = int(str(get_msg()))
         if values[inp - 1] == inp:
             if i % 2  == 0 :
                 values[inp - 1 ] = "X"
@@ -73,18 +76,19 @@ def play(values,player1,player2) :
             new_print("Draw ") 
             break    
                                                                                                                                                                                                                                                                                    #win_pos = [[1,2,3],[1,4,7],[7,8,9],[3,6,9],[1,5,9],[3,5,7]]
-while 1: 
+while True: 
+    print("I'm here")
     if  get_msg() == "play":
         print("1")
-        text = "player 1  enter you name "
-        new_print(text)
+        text2 = "player 1  enter your name "
+        new_print(text2)
         out()
         print("2")
         player1 = get_msg()
         print("3")
         
         print(player1)
-        new_print("player 2  enter you name ")
+        new_print("player 2  enter your name ")
         out()
         player2 = get_msg()
         values = [i+1 for i in range(9)]
@@ -95,6 +99,4 @@ while 1:
 
         out()
         continue
-        
-
         
