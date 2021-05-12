@@ -72,7 +72,7 @@ def play(values,player1,player2) :
         display(values)
         if check_winner(values,player1,player2) == True:
             break
-        if i == 10 :
+        if i == 9 :
             new_print("Draw ") 
             break    
                                                                                                                                                                                                                                                                                    #win_pos = [[1,2,3],[1,4,7],[7,8,9],[3,6,9],[1,5,9],[3,5,7]]
